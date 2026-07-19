@@ -21,7 +21,7 @@
       in {
         packages.default = naersk'.buildPackage {
           pname = "cli-chan";
-          version = "0.1.0";
+          version = "0.2.1";
           src = ./.;
 
           nativeBuildInputs = with pkgs; [pkg-config];
@@ -30,11 +30,12 @@
 
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
-            rust-analyzer
             clippy
-            rustfmt
-            pkg-config
             openssl
+            pkg-config
+            rust-analyzer
+            rustc
+            rustfmt
           ];
         };
       };
